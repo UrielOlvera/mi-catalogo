@@ -1,0 +1,36 @@
+
+<div *ngFor='let auto of autos'>
+    <div class="list">
+        <!--<div><a class="item item-icon" (click)="onSelect(auto, autoModal)" href="#">ver</a></div>
+        <div class="item item-icon fas fa-eye fa-3x" (click)="onSelect(auto)"></div>-->
+        <button class="item item-icon" (click)="onSelect(auto, autoModal)">ver</button>
+        <div class="item item-description">{{auto.descripcion}}</div>
+    </div>
+</div>
+<ng-template #autoModal>
+    <div class="modal-header">
+        <h4>Title</h4>
+    </div>
+    <div class="modal-body">
+        <div class="modal-atributo">
+            <label class="ma-title">Marca: </label>
+            <label class="ma-text">{{autoSelected.marca}}</label>
+        </div>
+        <div class="modal-atributo">
+            <label class="ma-title">Submarca: </label>
+            <label class="ma-text">{{autoSelected.submarca}}</label>
+        </div>
+        <div class="modal-atributo">
+            <label class="ma-title">Modelo: </label>
+            <label class="ma-text">{{autoSelected.modelo}}</label>
+        </div>
+        <div class="modal-atributo">
+            <label class="ma-title">Descripcion: </label>
+            <label class="ma-text">{{autoSelected.descripcion}}</label>
+        </div>
+        <div class="modal-atributo">
+            <label class="ma-title">Fecha de registro: </label>
+            <label class="ma-text">{{autoSelected.fecha_registro}}</label>
+        </div>
+    </div>
+</ng-template>

@@ -1,0 +1,20 @@
+body{
+    text-align: left;
+    line-height: 1.2;
+}
+*,::after,::before{
+    box-sizing: border-box;
+}
+.list a{
+    text-decoration: none;
+}
+.item{
+    justify-content: space-around;
+    margin: 2em;
+}
+.modal-atributo{
+    justify-content: space-around;
+}
+.ma-title{
+    font-weight: bold;
+}
