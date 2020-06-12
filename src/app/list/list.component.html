@@ -1,15 +1,15 @@
-
 <div *ngFor='let auto of autos'>
     <div class="list">
-        <!--<div><a class="item item-icon" (click)="onSelect(auto, autoModal)" href="#">ver</a></div>
-        <div class="item item-icon fas fa-eye fa-3x" (click)="onSelect(auto)"></div>-->
-        <button class="item item-icon" (click)="onSelect(auto, autoModal)">ver</button>
+        <!-- fas fa-eye fa-3x -->
+        <div class="item item-icon" aria-hidden="true" (click)="onSelect(auto, autoModal)">
+            <img src="https://cdn.pixabay.com/photo/2016/12/18/11/04/eye-1915454_960_720.png" width="55px" height="30px"></div>
         <div class="item item-description">{{auto.descripcion}}</div>
     </div>
 </div>
+
 <ng-template #autoModal>
     <div class="modal-header">
-        <h4>Title</h4>
+        <h4>Detalles</h4>
     </div>
     <div class="modal-body">
         <div class="modal-atributo">
