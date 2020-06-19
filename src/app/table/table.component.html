@@ -1,5 +1,8 @@
 <div></div>
 <div>
+    <button class="btn btn-add" (click) = "openModalAdd()">Agregar +</button>
+</div>
+<div>
     <table class="table">
         <thead>
             <tr>
@@ -13,28 +16,40 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let auto of autos | paginate: {itemsPerPage: 10, currentPage: p}; let i = index">
-                <th scope="row"> {{i+1}} </th>
+            <!--paginate: {itemsPerPage: 10, currentPage: p};-->
+            <tr *ngFor="let auto of autos | slice: (page-1) * pageSize: (page-1) * pageSize + pageSize">
+                <!--<th scope="row"> {{i+1}} </th>-->
+                <td> {{auto._id}} </td>
                 <td> {{auto.marca}} </td>
                 <td> {{auto.submarca}} </td>
                 <td> {{auto.descripcion}} </td>
-                <td> {{auto.modelo}} </td>
-                <td><img src="https://cdn3.iconfinder.com/data/icons/linecons-free-vector-icons-pack/32/trash-512.png"
-                    height="20px" width="20px"></td>
-                <td><img src="https://cdn0.iconfinder.com/data/icons/multimedia-solid-30px/30/edit_modify_write_pen-512.png"
-                        height="20px" width="20px"></td>
+                <td> {{auto.modelos}} </td>
+                <td (click)="openModalConfirmarEliminar(auto)">
+                    <img src="https://img.icons8.com/metro/26/000000/trash.png"/></td>
+                <td (click)="openModalEditar(auto)">
+                    <img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></td>
             </tr>
         </tbody>
     </table>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <!--<pagination-controls (pageChange)="p = $event"></pagination-controls>-->
 </div>
+
+<div class="d-flex justify-content-end">
+    <ngb-pagination 
+        [(page)]="page" 
+        [(pageSize)]="pageSize" 
+        [(collectionSize)]="collectionSize">
+    </ngb-pagination>
+</div>
+
 <!--
 <div class="d-flex justify-content-between p-2">
     <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"></ngb-pagination>
     <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">
-        <option [ngValue]="2">2 artículos por pagina</option>
-        <option [ngValue]="4">4 artículos por pagina</option>
-        <option [ngValue]="6">6 artículos por pagina</option>
+        <option [ngValue]="5">5 artículos por pagina</option>
+        <option [ngValue]="10">10 artículos por pagina</option>
+        <option [ngValue]="15">15 artículos por pagina</option>
     </select>
-</div>
--->
+</div>-->
+
+

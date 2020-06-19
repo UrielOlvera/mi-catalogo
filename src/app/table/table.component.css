@@ -1,0 +1,9 @@
+.btn{
+    font-weight: bold;
+}
+.btn-add{
+    color: #3F3F44;
+    background: #fc9e81e5;
+    margin: 1em;
+    border: 1px solid #3F3F44;
+}

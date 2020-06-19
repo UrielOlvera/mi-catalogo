@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h4>Detalles</h4>
+    
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    
+</div>
+<div class="modal-body">
+    <div class="modal-atributo">
+        <label class="ma-title">Marca: </label>
+        <label class="ma-text">{{autoSelected.marca}}</label>
+    </div>
+    <div class="modal-atributo">
+        <label class="ma-title">Submarca: </label>
+        <label class="ma-text">{{autoSelected.submarca}}</label>
+    </div>
+    <div class="modal-atributo">
+        <label class="ma-title">Modelos: </label>
+        <label class="ma-text">{{autoSelected.modelos}}</label>
+    </div>
+    <div class="modal-atributo">
+        <label class="ma-title">Descripcion: </label>
+        <label class="ma-text">{{autoSelected.descripcion}}</label>
+    </div>  
+</div>

@@ -24,3 +24,11 @@ html{
 .list .list-description{
     margin: 2px 5px 2px 40px;
 }
+
+.ng-valid[required]{
+    border-left: 5px solid green;
+}
+
+.ng-invalid:not(form){
+    border-left: 5px solid red;
+}
