@@ -13,15 +13,19 @@ import { DeleteComponent } from '../modals/delete/delete.component';
 })
 export class TableComponent implements OnInit {
 
-  page=1;
-  pageSize=10;
+  //p: number = 1;
+  page = 1;
+  pageSize = 10;
   collectionSize;
-
   autos: Automovil[];
+  displayProgresBar: boolean;
+
   constructor(private autoService: AutosService, private modalService: NgbModal) { }
-  p: number = 1;
+  
   ngOnInit(): void {
+    this.displayProgresBar = true;
     this.autoService.getAutos().subscribe((response)=>{
+      this.displayProgresBar = false;
       this.autos = response.data;
       this.collectionSize = response.data.length;
     })
@@ -34,9 +38,10 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then(
       (auto) => {
-        this.autoService.updateAutos(auto).subscribe( response =>
+        this.autoService.updateAutos(auto).subscribe( response => {
+          this.ngOnInit();
           console.log(response)
-        );
+        });
       },
       (reason) => {
         console.log(reason)
@@ -49,9 +54,10 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then(
       (auto: Automovil) => {
-        this.autoService.addAuto(auto).subscribe( response => 
+        this.autoService.addAuto(auto).subscribe( response => {
           console.log(response)
-        );
+          this.ngOnInit();
+        });
       },
       (reason) => {
         console.log(reason)
@@ -65,6 +71,7 @@ export class TableComponent implements OnInit {
     modalRef.result.then(
       (autoTemp) => {
         this.autoService.deleteAuto(autoTemp).subscribe(response => {
+          this.ngOnInit();
           console.log("Auto eliminado")
           console.log(response)
         })

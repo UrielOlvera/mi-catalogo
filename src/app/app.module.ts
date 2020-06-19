@@ -18,6 +18,7 @@ import { DetailsComponent } from './modals/details/details.component';
 import { AddComponent } from './modals/add/add.component';
 import { UpdateComponent } from './modals/update/update.component';
 import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
+import { FormatoModelosPipe } from './pipes/formato-modelos.pipe';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
     AddComponent,
     UpdateComponent,
     ForbiddenNameDirective,
+    FormatoModelosPipe,
     
   ],
   imports: [

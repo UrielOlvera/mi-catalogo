@@ -1,6 +1,11 @@
 <div></div>
+<div (click) = "openModalAdd()">
+    <button class="btn btn-add">Agregar +</button>
+</div>
 <div>
-    <button class="btn btn-add" (click) = "openModalAdd()">Agregar +</button>
+    <p *ngIf="displayProgresBar">
+        <ngb-progressbar type="dark" [value]="100" [animated]=true [striped]=true></ngb-progressbar>
+    </p>
 </div>
 <div>
     <table class="table">
@@ -23,7 +28,7 @@
                 <td> {{auto.marca}} </td>
                 <td> {{auto.submarca}} </td>
                 <td> {{auto.descripcion}} </td>
-                <td> {{auto.modelos}} </td>
+                <td> {{auto.modelos | formatoModelos}} </td>
                 <td (click)="openModalConfirmarEliminar(auto)">
                     <button class="button"><img src="https://img.icons8.com/metro/26/000000/trash.png"/></button>
                 </td>

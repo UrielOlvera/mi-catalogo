@@ -24,7 +24,7 @@ export class AutosService {
   }
 
   addAuto(auto: Automovil): Observable<any>{
-    return this.http.post<any>(`${this.autosURL}`, auto);
+    return this.http.post<any>(this.autosURL, auto);
   }
 
   deleteAuto(auto: Automovil): Observable<any>{
