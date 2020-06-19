@@ -25,9 +25,11 @@
                 <td> {{auto.descripcion}} </td>
                 <td> {{auto.modelos}} </td>
                 <td (click)="openModalConfirmarEliminar(auto)">
-                    <img src="https://img.icons8.com/metro/26/000000/trash.png"/></td>
+                    <button class="button"><img src="https://img.icons8.com/metro/26/000000/trash.png"/></button>
+                </td>
                 <td (click)="openModalEditar(auto)">
-                    <img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></td>
+                    <button class="button"><img src="https://img.icons8.com/material-rounded/24/000000/edit.png"/></button>
+                </td>
             </tr>
         </tbody>
     </table>
