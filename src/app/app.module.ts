@@ -1,24 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { VistasComponent } from './vistas/vistas.component';
 import { ListComponent } from './list/list.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { NgxPaginationModule } from 'ngx-pagination';
-import { HttpClientModule } from '@angular/common/http';
 import { UpdateAddComponent } from './modals/update-add/update-add.component';
-import { FormsModule } from '@angular/forms';
 import { DeleteComponent } from './modals/delete/delete.component';
 import { DetailsComponent } from './modals/details/details.component';
-import { AddComponent } from './modals/add/add.component';
-import { UpdateComponent } from './modals/update/update.component';
 import { ForbiddenNameDirective } from './directives/forbidden-name.directive';
 import { FormatoModelosPipe } from './pipes/formato-modelos.pipe';
+import { LogComponent } from './log/log.component';
+
 
 
 @NgModule({
@@ -32,10 +33,9 @@ import { FormatoModelosPipe } from './pipes/formato-modelos.pipe';
     UpdateAddComponent,
     DeleteComponent,
     DetailsComponent,
-    AddComponent,
-    UpdateComponent,
     ForbiddenNameDirective,
     FormatoModelosPipe,
+    LogComponent,
     
   ],
   imports: [
@@ -44,7 +44,8 @@ import { FormatoModelosPipe } from './pipes/formato-modelos.pipe';
     NgbModule,
     NgxPaginationModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

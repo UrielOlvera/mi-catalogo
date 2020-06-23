@@ -1,13 +1,19 @@
 .btn{
-    font-weight: bold;
-}
-.btn-add{
     color: #3F3F44;
     background: #fc9e81e5;
     margin: 1em;
     border: 1px solid #3F3F44;
+    font-weight: bolder;
+}
+.btn:hover{
+    background: #f88b69e5;
 }
 .button{
     border: none;
     background: white;
+}
+div.input-group{
+    width: 30%;
+    margin-bottom: 1em;
+    margin-left: 1em;
 }

@@ -29,7 +29,6 @@ export class ListComponent implements OnInit {
   onSelect(auto: Automovil){
     const modalRef = this.modalService.open(DetailsComponent, { centered: true });
     modalRef.componentInstance.autoSelected = auto;
-
     modalRef.result.then(
       (auto) => {
         this.autoService.getAuto_ID(auto).subscribe(

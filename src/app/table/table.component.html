@@ -1,7 +1,15 @@
 <div></div>
-<div (click) = "openModalAdd()">
-    <button class="btn btn-add">Agregar +</button>
+<div>
+    <button type="button" (click) = "openModalAdd()" class="btn btn-add">Agregar 
+        <img src="https://img.icons8.com/small/16/000000/plus.png"/></button>
 </div>
+<div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text"><img src="https://img.icons8.com/material-sharp/24/000000/search.png"/></div>
+    </div>
+    <input type="text" class="form-control" id="inlineFormInputGroup" 
+        placeholder="¿Qué deseas buscar?" [(ngModel)]="searchText" autocomplete="off">
+  </div>
 <div>
     <p *ngIf="displayProgresBar">
         <ngb-progressbar type="dark" [value]="100" [animated]=true [striped]=true></ngb-progressbar>
@@ -22,7 +30,7 @@
         </thead>
         <tbody>
             <!--paginate: {itemsPerPage: 10, currentPage: p};-->
-            <tr *ngFor="let auto of autos | slice: (page-1) * pageSize: (page-1) * pageSize + pageSize">
+            <tr *ngFor="let auto of autos | filter:searchText | slice: (page-1) * pageSize: (page-1) * pageSize + pageSize">
                 <!--<th scope="row"> {{i+1}} </th>-->
                 <td> {{auto._id}} </td>
                 <td> {{auto.marca}} </td>

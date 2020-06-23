@@ -10,7 +10,7 @@ import { Automovil } from 'src/app/models';
 export class UpdateAddComponent implements OnInit {
   // Agregar/Editar
   action: string;
-  auto: Automovil;
+  auto: Automovil = {} as Automovil;
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit(): void {

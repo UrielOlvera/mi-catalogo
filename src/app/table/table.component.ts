@@ -19,6 +19,7 @@ export class TableComponent implements OnInit {
   collectionSize;
   autos: Automovil[];
   displayProgresBar: boolean;
+  searchText;
 
   constructor(private autoService: AutosService, private modalService: NgbModal) { }
   
