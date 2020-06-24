@@ -8,7 +8,7 @@ import { Automovil } from 'src/app/models';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  autoSelected: Automovil;
+  autoSelected: Automovil = {} as Automovil;
 
   constructor(public activeModal: NgbActiveModal) { }
 

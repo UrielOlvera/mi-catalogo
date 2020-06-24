@@ -8,7 +8,7 @@ import { Automovil } from 'src/app/models';
   styleUrls: ['./delete.component.css']
 })
 export class DeleteComponent implements OnInit {
-  auto: Automovil;
+  auto: Automovil = {} as Automovil;
 
   constructor(public activeModal: NgbActiveModal) { }
 

@@ -19,7 +19,7 @@
         </div>
         <!--[(ngModel)] = "auto.marca"-->
         <div class="form-group">
-            <label for="marca">Submarca</label>
+            <label for="submarca">Submarca</label>
             <input type="text" class="form-control" id="submarca" placeholder="Agrega la submarca" [(ngModel)] = "auto.submarca" required
                 name="submarca" minlength="4" #submarca="ngModel">
 
@@ -30,7 +30,7 @@
         </div>
         <!--[(ngModel)] = "auto.submarca"-->
         <div class="form-group">
-            <label for="marca">Descripcion</label>
+            <label for="descripcion">Descripcion</label>
             <input type="text" class="form-control" id="descripcion" placeholder="Agrega la descripcion" [(ngModel)] = "auto.descripcion" required
                 name="descripcion" #descripcion="ngModel">
 
@@ -39,31 +39,52 @@
             </div>
         </div>
         <!--[(ngModel)] = "auto.descripcion"-->
+<!--
         <div class="form-group">
-            <label for="marca">Modelos</label>
-            <input type="text" class="form-control" id="modelos" placeholder="Agrega los modelos" [(ngModel)] = "auto.modelos" 
-                name="modelos" #modelos>
+            <label for="marca">Modelo1</label>
+            <input type="text" class="form-control" id="modelo1" placeholder="Agrega los modelos" [(ngModel)] = "desde" 
+                name="modelos1" #modelos="ngModel">
             <div>
                 
             </div>
         </div>
-<!--
+        <div class="form-group">
+            <label for="marca">Modelo2</label>
+            <input type="text" class="form-control" id="modelo2" placeholder="Agrega los modelos" [(ngModel)] = "hasta" 
+                name="modelos2" #modelos="ngModel" (change)="generateModelsArray()">
+            <div>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="modelos">Modelos</label>
+            <input type="text" class="form-control" id="modelo1" placeholder="blah" [(ngModel)] = "auto.modelos" 
+                name="modelos" #modelos="ngModel">
+            <div>
+                
+            </div>
+        </div>
+-->
         <label>Modelos</label>
         <div class="form-row">
+
             <div class="form-group col-mod-3">
                 <label for="desde">desde</label>
-                <input type="number" min="2000" max="2020" class="form-control" id="desde" placeholder="desde"
-                    [(ngModel)]="desde" name="desde">
+                <input type="number" id="desde" class="form-control" placeholder="desde" name="desde"
+                    min="2000" max="2020" [(ngModel)]="desde" #modelos1="ngModel" (change)="generateModelsArray()">
             </div>
 
             <div class="form-group col-mod-3">
                 <label for="hasta">hasta</label>
-                <input type="number" min="2000" max="2020" class="form-control" id="hasta" placeholder="hasta"
-                    [(ngModel)]="hasta" name="hasta">
+                <input type="number" id="hasta"  class="form-control" placeholder="hasta" name="hasta"
+                    min="2000" max="2020" [(ngModel)]="hasta" #modelos2="ngModel" (change)="generateModelsArray()">
             </div>
         </div>
--->
-        
+        <div>
+            <div *ngIf="modelos1 > modelos2" class="alert alert-danger">El campo "desde" debe ser mayor que "hasta"</div>
+        </div>
+
         <!--[(ngModel)] = "auto.modelos"-->
         <div class="model-footer">
             <button type="submit" class="btn btn-outline-dark" [disabled]="!formAutos.form.valid">Guardar</button>
