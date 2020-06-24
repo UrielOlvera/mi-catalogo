@@ -1,4 +1,4 @@
-### mi catalogo: https://urielolvera.github.io/mi-catalogo/
+### Mi catalogo: https://urielolvera.github.io/mi-catalogo/
 
 # MiCatalogo
 
